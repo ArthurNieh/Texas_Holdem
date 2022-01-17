@@ -37,7 +37,7 @@ void welcome(int &n);
 
 int main( int argc, char* args[] )
 {
-	
+	//Start up SDL and create window
 	if( !init() )
 	{
 		printf( "Failed to initialize!\n" );
@@ -52,7 +52,7 @@ int main( int argc, char* args[] )
 		
 	}
 	
-	int N;//player number
+	int N = 0;//player number
 	welcome(N);
 	
 	player* p = new player[N];
@@ -60,9 +60,6 @@ int main( int argc, char* args[] )
 	
 	gaming(p, N);
 	
-	//Start up SDL and create window
-	
-
 	//Free resources and close SDL
 	close();
 
@@ -70,7 +67,20 @@ int main( int argc, char* args[] )
 }
 
 void welcome(int &n){
-	do{
+		
+	clear_screan();
+	hand1texture.loadFromFile("pictures/rule1.png");//number
+	hand1texture.render( 0 , 0 , SCREEN_WIDTH, SCREEN_HEIGHT );
+	SDL_RenderPresent( gRenderer );
+	ok();
+	
+	clear_screan();
+	hand1texture.loadFromFile("pictures/rule2.png");//number
+	hand1texture.render( SCREEN_WIDTH/4 , 0 , SCREEN_HEIGHT*5/8, SCREEN_HEIGHT );
+	SDL_RenderPresent( gRenderer );
+	ok();
+	
+	do{	
 		clear_screan();
 		hand1texture.loadFromFile("pictures/player_number.png");//number
 		hand1texture.render( SCREEN_WIDTH/4 , SCREEN_HEIGHT/4 , SCREEN_WIDTH/2, SCREEN_HEIGHT/5 );
