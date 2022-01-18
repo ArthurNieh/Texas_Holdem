@@ -64,11 +64,8 @@ class LButton : public LTexture
 		int getposy(){return mPosition.y;}
 		
 		//Handles mouse event
-		void handleEvent( SDL_Event* e );
 		bool click( SDL_Event* e );
 		bool numclick( SDL_Event* e );
-		//Shows button sprite
-		//void render();
 
 	private:
 		//Top left position

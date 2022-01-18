@@ -52,10 +52,10 @@ int main( int argc, char* args[] )
 		}
 		
 	}
-	//
+	
 	int N = 0;//player number
 	welcome(N);
-	
+	//
 	player* p = new player[N];
 	
 	gaming(p, N);
@@ -86,9 +86,9 @@ void welcome(int &n){
 		hand1texture.render( SCREEN_WIDTH/4 , SCREEN_HEIGHT/4 , SCREEN_WIDTH/2, SCREEN_HEIGHT/5 );
 		SDL_RenderPresent( gRenderer );
 		n = type_in();
-		if(n<=1){
+		if(n<=1 || n>23){
 			wrong_input();
 		}
-	}while(n<=1);
+	}while(n<=1 || n>23);
 	
 }

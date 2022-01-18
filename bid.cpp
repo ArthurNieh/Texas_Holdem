@@ -8,6 +8,7 @@
 #include "basic.h"
 #include<string>
 
+
 extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
 //The window we'll be rendering to
@@ -201,7 +202,7 @@ void after(player p[], const int bank, int &moneypot, bool fold[],int N, int sta
 	else{
 	    highest= 0;
 	
-	    for(int i=0;i<N;i++) //4 是自己設的
+	    for(int i=0;i<N;i++) 
 	    {
 	        p[i].set_bitThisRound(0);
 	    }
@@ -384,6 +385,7 @@ void printmoneypotInPic(int money){
 }
 
 void player_preoperation(player* p, int index, int bankcounter, int N){
+
 	clear_screan();
         
     p[index].showplayerindex(index);
@@ -401,6 +403,7 @@ void player_preoperation(player* p, int index, int bankcounter, int N){
 	SDL_RenderPresent( gRenderer );
 	
 	p[index].showmychipsInPic();
+	
 }
 
 void show_generalcardInPic( card* general, int num){
@@ -422,7 +425,6 @@ void personal_reset(player p[], const int bank, int &moneypot, int N, int stage,
 	show_generalcardInPic(general, stage);
 	printmoneypotInPic(moneypot);
 	
-	//cout<<highest<<endl;
 	//to call
 	int tocall = highest-p[turn].get_bitThisRound();
 	if(tocall>0){

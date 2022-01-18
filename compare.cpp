@@ -75,14 +75,14 @@ card* arrange(card* hand, card* general){
     }
 
     card* temp= combine;
-    sort(temp,temp+5,compare); // temp[0].number �O�̤j �B 1 (A)�b�Y
+    sort(temp,temp+5,compare); 
 
 
-    if(fivecolors == 1){         // ���ε��ܶ�
-// temp
+    if(fivecolors == 1){
+
         if((pairs==0 && temp[0].number - 4 == temp[4].number ) || (pairs==0 && temp[0].number ==1 && temp[4].number==10))
         {
-            return 5000 + temp[4].number; // ��ᶶ
+            return 5000 + temp[4].number; 
         }
         else{
             if(temp[0].number==1)
@@ -90,10 +90,10 @@ card* arrange(card* hand, card* general){
             else
                 return 3500 + temp[0].number;
 
-        }//���
+        }
     }
 
-    else if(fourkinds){ //�K��
+    else if(fourkinds){ 
         int x;
         for(int i=0;i<14;i++)
             if(number[i]==4)
@@ -105,13 +105,13 @@ card* arrange(card* hand, card* general){
                return  4500 + x;
     }
 
-    else if(threekinds){ //�� ��Ī
+    else if(threekinds){ 
         if(pairs==0)
         {
             if(temp[0].number==1)
                 return 3000 + 14;
             else
-                return 3000 + temp[2].number; // �ĤG�i�@���O����
+                return 3000 + temp[2].number; 
         }
 
         else{
@@ -130,7 +130,7 @@ card* arrange(card* hand, card* general){
             else
                 return 350 + 13*13*temp[1].number + 13* temp[3].number + temp[2].number;
         }
- // ���g�L�Ƨǫ� 1,3���@�w�O��l��������
+ 
 
         else if(temp[2].number==temp[3].number){
             if(temp[0].number == 1)
@@ -197,14 +197,6 @@ card* arrange(card* hand, card* general){
 	return a.number > b.number;
 }
 
-// �p�G�Ohigh card: �I�ƥ�2~14
-// �@��: �糧��13 �A�[�W ��i13=> 169�� �N���Ҽ{���ƤF����range�q�X��    22 2 �O �̤p 28  AA A�O�̤j 196  pair*13 + high card if A =>14
-// ���: ���� 13 �A�[�W 13 ��i 13 13*13*13 2197��  350 + highpair*13*13+lowpair*13 + high card �̤p366  �̤j 2562
-// �T��: 2800+13
-// ���l:13 3000 + head if�H�W�N�ܦ���i  �[�Y�n�B�O���γB�z���ڬOA
-// ���:13 3500+ highcard �̤p2852 �̤j2864
-// ��Ī:13  4000 + 13
-// �K��:13  4500 + head
-// ��ᶶ:13  5000 + head
+
 
 

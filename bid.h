@@ -6,16 +6,9 @@
 #include"player.h"
 
 
-
-
-
-
-
-
-
 void after(player [],const int,int &,bool [],int,int,card*);
 bool judge(const bool [],player [],int,int);
-void singlegaming(player [],int , int , card*  , bool* ); // 玩家狀態 、莊家換誰、玩家數、公牌
+void singlegaming(player [],int , int , card*  , bool* ); 
 
 void printmoneypotInPic(int);
 void player_preoperation(player*, int, int, int);
