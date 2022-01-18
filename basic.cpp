@@ -323,7 +323,7 @@ bool loadMedia()
 		printf( "Failed to load gbottum texture image!\n" );
 		success = false;
 	}
-	resume_bottum.setPosition(SCREEN_WIDTH-BUTTON_WIDTH, BUTTON_HEIGHT);
+	resume_bottum.setPosition(SCREEN_WIDTH- 2*BUTTON_WIDTH, 0);
 	
 	return success;
 }

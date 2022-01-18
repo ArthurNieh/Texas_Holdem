@@ -54,7 +54,7 @@ bool gaming(player p[], int N)
 			hand1texture.render( SCREEN_HEIGHT*6/7, BUTTON_HEIGHT , SCREEN_WIDTH-SCREEN_HEIGHT*6/7 , SCREEN_HEIGHT-BUTTON_HEIGHT);
 			
 			exit_bottum.render( SCREEN_WIDTH-BUTTON_WIDTH , 0 , BUTTON_WIDTH, BUTTON_HEIGHT);
-			resume_bottum.render(SCREEN_WIDTH-BUTTON_WIDTH , BUTTON_HEIGHT , BUTTON_WIDTH, BUTTON_HEIGHT);
+			resume_bottum.render(SCREEN_WIDTH-2*BUTTON_WIDTH , 0 , BUTTON_WIDTH, BUTTON_HEIGHT);
 			
 			SDL_RenderPresent( gRenderer );
 			
@@ -119,6 +119,8 @@ bool gaming(player p[], int N)
 		
 		//exit bottum
 		exit_bottum.render( SCREEN_WIDTH-BUTTON_WIDTH , 0 , BUTTON_WIDTH, BUTTON_HEIGHT);
+		//resume bottum
+		resume_bottum.render(SCREEN_WIDTH-2*BUTTON_WIDTH , 0 , BUTTON_WIDTH, BUTTON_HEIGHT);
 		
 		SDL_RenderPresent( gRenderer );
 		
@@ -133,6 +135,9 @@ bool gaming(player p[], int N)
 				}
 				if(exit_bottum.click( &e )){
 					return 0;
+				}
+				if(resume_bottum.click( &e )){
+					return 1;
 				}
 			}
 			if(flag){
