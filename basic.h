@@ -87,11 +87,22 @@ bool loadMedia();
 //Frees media and shuts down SDL
 void close();
 
+//reset the window and show the background
 void clear_screan();
+
+//change a number from 0~9 to the png picture file name
 std::string numtoaddress(int num);
+
+//show 0~9 number button on the screen, get the input of mouse clicks
 int type_in();
+
+//show a ¡§ok¡¨ button on the screen, continue after the mouse click the button
 void ok();
+
+//show a ¡§wrong input¡¨ picture on the screen, used when wrong input happens
 void wrong_input();
+
+
 void print_2number(int, int, int);
 
 #endif

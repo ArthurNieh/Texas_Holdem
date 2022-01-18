@@ -334,6 +334,11 @@ void close()
 	hand1texture.free();
 	hand2texture.free();
 	gBackgroundTexture.free();
+	exit_bottum.free();
+	resume_bottum.free();
+	for(int i=0;i<5;i++){
+		gbottum[i].free();
+	}
 
 	//Destroy window	
 	SDL_DestroyRenderer( gRenderer );
@@ -434,12 +439,6 @@ void print_2number(int num, int posx, int posy){
 		hand1texture.loadFromFile(numtoaddress(mynum));
 		hand1texture.render( posx , posy , length, height );
 	}
-/*	else if(mynum<100){
-		hand1texture.loadFromFile(numtoaddress(mynum/10));
-		hand1texture.render( posx , posy , length, height );
-		hand1texture.loadFromFile(numtoaddress(mynum%10));
-		hand1texture.render( posx + length , posy , length, height );
-	}*/
 	else{
 		int digit = 0;
 		while(mynum > 0){
