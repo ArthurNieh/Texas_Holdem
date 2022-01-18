@@ -1,6 +1,6 @@
 
 #include "basic.h"
-#include <iostream>
+
 //Screen dimension constants
 extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
@@ -431,7 +431,6 @@ int type_in(){
 		while(SDL_PollEvent( &e ) != 0){
 			for(int i=0;i<10;i++){
 				if(numberbottum[i].numclick( &e )){
-					std::cout<<i<<std::endl;
 					count_input *= 10;
 					count_input += i;
 					break;

@@ -1,7 +1,7 @@
 #include "player.h"
 #include <iostream>
 #include <algorithm>
-#include <windows.h>
+//#include <windows.h>
 #define initialMoney 100
 using namespace std;
 
@@ -98,7 +98,7 @@ void player::dealpairedcards(){
 		cout<<"throwing out the paired cards";
 		for(int i=0;i<3;i++){
 			cout<<".";
-			Sleep(200);
+			//Sleep(200);
 		}
 		cout<<endl;
 	}

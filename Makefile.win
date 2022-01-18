@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o basic.o card.o player.o
-LINKOBJ  = main.o basic.o card.o player.o
+OBJ      = main.o basic.o card.o player.o gaming.o compare.o bid.o
+LINKOBJ  = main.o basic.o card.o player.o gaming.o compare.o bid.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -L"SDL2-2.0.18/x86_64-w64-mingw32/lib" -L"SDL_bgi-2.5.0/bin/Mingw64" -L"SDL2_image-2.0.5/x86_64-w64-mingw32/lib" -L"SDL2_mixer-2.0.4/x86_64-w64-mingw32/lib" -L"SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib" -lmingw32 -L/mingw64/bin -lSDL_bgi -lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2main -lSDL2
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"SDL2-2.0.18/x86_64-w64-mingw32/include" -I"SDL2-2.0.18/x86_64-w64-mingw32/include/SDL2" -I"SDL_bgi-2.5.0/src" -I"SDL2_image-2.0.5/x86_64-w64-mingw32/include" -I"SDL2_mixer-2.0.4/x86_64-w64-mingw32/include" -I"SDL2_ttf-2.0.15/x86_64-w64-mingw32/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"SDL2-2.0.18/x86_64-w64-mingw32/include" -I"SDL2-2.0.18/x86_64-w64-mingw32/include/SDL2" -I"SDL_bgi-2.5.0/src" -I"SDL2_image-2.0.5/x86_64-w64-mingw32/include" -I"SDL2_mixer-2.0.4/x86_64-w64-mingw32/include" -I"SDL2_ttf-2.0.15/x86_64-w64-mingw32/include"
@@ -35,3 +35,12 @@ card.o: card.cpp
 
 player.o: player.cpp
 	$(CPP) -c player.cpp -o player.o $(CXXFLAGS)
+
+gaming.o: gaming.cpp
+	$(CPP) -c gaming.cpp -o gaming.o $(CXXFLAGS)
+
+compare.o: compare.cpp
+	$(CPP) -c compare.cpp -o compare.o $(CXXFLAGS)
+
+bid.o: bid.cpp
+	$(CPP) -c bid.cpp -o bid.o $(CXXFLAGS)

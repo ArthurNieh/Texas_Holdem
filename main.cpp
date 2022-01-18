@@ -1,11 +1,12 @@
 
-#include <iostream>
 #include <algorithm>
-#include "windows.h"
+//#include "windows.h"
 #include "card.h"
 #include "player.h" 
 #include "basic.h"
-#include  "gaming.h"
+#include "gaming.h"
+#include "compare.h"
+
 using namespace std;
 
 
@@ -17,7 +18,7 @@ extern const int BUTTON_WIDTH = 200;
 extern const int BUTTON_HEIGHT = 120;
 
 extern const int NUM_BUT_L = SCREEN_WIDTH/16;
-
+extern const int blind_size = 70;
 
 LTexture hand1texture;
 LTexture hand2texture;
@@ -51,12 +52,11 @@ int main( int argc, char* args[] )
 		}
 		
 	}
-	
+	//
 	int N = 0;//player number
 	welcome(N);
 	
 	player* p = new player[N];
-	//cout<<"asshole"<<endl;
 	
 	gaming(p, N);
 	
