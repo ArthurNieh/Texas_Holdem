@@ -20,8 +20,9 @@ extern LTexture hand2texture;
 extern LTexture gBackgroundTexture;
 extern LButton gbottum[5];
 extern LButton exit_bottum;
+extern LButton resume_bottum;
 
-void gaming(player p[], int N)
+bool gaming(player p[], int N)
 {
 	
     int bankcounter=0;
@@ -51,7 +52,9 @@ void gaming(player p[], int N)
 			hand1texture.render( 0 , 0 , SCREEN_HEIGHT*6/7, SCREEN_HEIGHT);
 			hand1texture.loadFromFile("pictures/trophy.png");
 			hand1texture.render( SCREEN_HEIGHT*6/7, BUTTON_HEIGHT , SCREEN_WIDTH-SCREEN_HEIGHT*6/7 , SCREEN_HEIGHT-BUTTON_HEIGHT);
+			
 			exit_bottum.render( SCREEN_WIDTH-BUTTON_WIDTH , 0 , BUTTON_WIDTH, BUTTON_HEIGHT);
+			resume_bottum.render(SCREEN_WIDTH-BUTTON_WIDTH , BUTTON_HEIGHT , BUTTON_WIDTH, BUTTON_HEIGHT);
 			
 			SDL_RenderPresent( gRenderer );
 			
@@ -62,18 +65,16 @@ void gaming(player p[], int N)
             
             SDL_Event e;
 			while(true){
-				bool flag = false;
 				while(SDL_PollEvent( &e ) != 0){
 					if(exit_bottum.click( &e )){
-						flag = true;
-						break;
+						return 0;
+					}
+					if(resume_bottum.click( &e )){
+						return 1;
 					}
 				}
-				if(flag){
-					break;
-				}
 			}
-            
+			
             break;
         }
 
@@ -118,7 +119,6 @@ void gaming(player p[], int N)
 		
 		//exit bottum
 		exit_bottum.render( SCREEN_WIDTH-BUTTON_WIDTH , 0 , BUTTON_WIDTH, BUTTON_HEIGHT);
-		bool end_the_game = 0;
 		
 		SDL_RenderPresent( gRenderer );
 		
@@ -132,9 +132,7 @@ void gaming(player p[], int N)
 					break;
 				}
 				if(exit_bottum.click( &e )){
-					end_the_game = 1;
-					flag = true;
-					break;
+					return 0;
 				}
 			}
 			if(flag){
@@ -142,9 +140,6 @@ void gaming(player p[], int N)
 			}
 		}
 		
-		if(end_the_game){
-			return;
-		}
 		
         singlegaming(p, bankcounter%N, N, publics.handcard, broke);
         bankcounter++;

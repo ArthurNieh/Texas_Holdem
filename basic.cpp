@@ -22,6 +22,7 @@ extern LTexture hand2texture;
 extern LTexture gBackgroundTexture;
 extern LButton gbottum[5];
 extern LButton exit_bottum;
+extern LButton resume_bottum;
 
 LButton numberbottum[10];
 
@@ -316,6 +317,13 @@ bool loadMedia()
 		success = false;
 	}
 	exit_bottum.setPosition(SCREEN_WIDTH-BUTTON_WIDTH, 0);
+	
+	if( !resume_bottum.loadFromFile( "pictures/resume.png" ) )
+	{
+		printf( "Failed to load gbottum texture image!\n" );
+		success = false;
+	}
+	resume_bottum.setPosition(SCREEN_WIDTH-BUTTON_WIDTH, BUTTON_HEIGHT);
 	
 	return success;
 }

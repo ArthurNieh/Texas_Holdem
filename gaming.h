@@ -8,7 +8,7 @@
 
 
 void serve(player* , int, player&);
-void gaming(player p[], int N);
+bool gaming(player p[], int N);
 
 void setpos(player* p, int N);
 
